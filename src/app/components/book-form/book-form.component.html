@@ -1,0 +1,52 @@
+<div class="container mt-4">
+    <h2>{{ isEditMode ? 'Editar Libro' : 'Agregar Libro' }}</h2>
+    <form (ngSubmit)="saveBook()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Titulo</label>
+        <input
+          type="text"
+          id="title"
+          class="form-control"
+          [(ngModel)]="book.title"
+          name="title"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="author" class="form-label">Autor</label>
+        <input
+          type="text"
+          id="author"
+          class="form-control"
+          [(ngModel)]="book.author"
+          name="author"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="date_post" class="form-label">Fecha de publicación</label>
+        <input
+          type="date"
+          id="date_post"
+          class="form-control"
+          [(ngModel)]="book.date_post"
+          name="date_post"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="genre" class="form-label">Genero</label>
+        <input
+          type="text"
+          id="genre"
+          class="form-control"
+          [(ngModel)]="book.genre"
+          name="genre"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success">{{ isEditMode ? 'Update' : 'Save' }}</button>
+      <a [routerLink]="['/']" class="btn btn-secondary">Cancelar</a>
+    </form>
+  </div>
+  
